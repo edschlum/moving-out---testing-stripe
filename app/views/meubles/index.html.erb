@@ -1,0 +1,30 @@
+<h1>Listing meubles</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Link</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @meubles.each do |meuble| %>
+  <tr>
+    <td><%= meuble.name %></td>
+    <td><%= meuble.description %></td>
+    <td><%= meuble.link %></td>
+    <td><%= meuble.price %></td>
+    <td><%= link_to 'Show', meuble %></td>
+    <td><%= link_to 'Edit', edit_meuble_path(meuble) %></td>
+    <td><%= link_to 'Destroy', meuble, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to "Buy!", new_subscription_path(:meuble_id => meuble.id) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Meuble', new_meuble_path %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @meuble.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @meuble.description %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @meuble.link %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @meuble.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_meuble_path(@meuble) %> |
+<%= link_to 'Back', meubles_path %>
