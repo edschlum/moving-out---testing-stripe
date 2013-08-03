@@ -7,11 +7,11 @@ class ChargesController < ApplicationController
 	  # Amount in cents
 
 	  @meuble = Meuble.find(params[:meuble_id])
-	  @email = 	Subscription.find(params[:meuble_id]).email
+	  @email = 	Subscription.select(:email).where("meuble_id = ?", params[:meuble_id]).last
 	  @amount = (@meuble.price.to_d * 100).to_i
 
 	  customer = Stripe::Customer.create(
-	    :email => @email,
+	    :email => @email.email,
 	    :card  => params[:stripeToken]
 	  )
 
