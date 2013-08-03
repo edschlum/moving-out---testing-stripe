@@ -10,7 +10,7 @@
       <div class="row-fluid">
       	<% @meubles.each do |meuble| %>
         <div class="span4">
-          <h2><%= meuble.name %></h2>
+          <h2 style="text-align:center"><%= meuble.name %></h2>
           <img src="<%= meuble.link %>">
           <p> Price : <%= number_to_currency meuble.price %> </p>
           <p><a class="btn" href="<%= new_subscription_path(:meuble_id => meuble.id) %>">View details &raquo;</a></p>
@@ -20,7 +20,7 @@
       <div class="row-fluid">
       	<% @meubles_2.each do |meuble| %>
         <div class="span4">
-          <h2><%= meuble.name %></h2>
+          <h2 style="text-align:center"><%= meuble.name %></h2>
           <img src="<%= meuble.link %>">
           <p> Price : <%= number_to_currency meuble.price %> </p>
           <p><a class="btn" href="<%= new_subscription_path(:meuble_id => meuble.id) %>">View details &raquo;</a></p>
