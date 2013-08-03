@@ -11,8 +11,8 @@
       	<% @meubles.each do |meuble| %>
         <div class="span4">
           <h2><%= meuble.name %></h2>
-          <img src="<%= meuble.link %>", class="img-circle">
-          <p> Price : <%= meuble.price %> </p>
+          <img src="<%= meuble.link %>">
+          <p> Price : <%= number_to_currency meuble.price %> </p>
           <p><a class="btn" href="<%= new_subscription_path(:meuble_id => meuble.id) %>">View details &raquo;</a></p>
         </div>
         <% end %>
@@ -22,7 +22,7 @@
         <div class="span4">
           <h2><%= meuble.name %></h2>
           <img src="<%= meuble.link %>">
-          <p> Price : <%= meuble.price %> </p>
+          <p> Price : <%= number_to_currency meuble.price %> </p>
           <p><a class="btn" href="<%= new_subscription_path(:meuble_id => meuble.id) %>">View details &raquo;</a></p>
         </div>
         <% end %>
