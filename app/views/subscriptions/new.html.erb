@@ -1,5 +1,11 @@
-<h1>Acheter le meuble <%= @subscription.meuble.name %> : <%= number_to_currency @subscription.meuble.price %></h1>
-
+<div class="row-inline" style="margin:auto;">
+	<h2>You want to buy <%= @subscription.meuble.name %> ? Price : <%= number_to_currency @subscription.meuble.price %></h2>
+</div>
+Description : <%= @subscription.meuble.description %>
+<div style="margin-top:50px">
 <%= render 'form' %>
-
-<%= link_to 'Back', subscriptions_path %>
+<br /><br />
+<div class="progress progress-striped span4 offset3">
+  <div class="bar" style="width: 33%;"> 1 / 3</div>
+</div>
+</div>

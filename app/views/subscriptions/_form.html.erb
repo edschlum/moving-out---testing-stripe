@@ -1,20 +1,9 @@
-<%= form_for @subscription, :url => { :action => :create, :meuble_id => @subscription.meuble.id } do |f| %>
-  <div class="control-group">
-    Please fill in your e-mail first !
-    <div class="controls">
+<%= form_for @subscription, :url => { :action => :create, :meuble_id => @subscription.meuble.id }, html: { class: "form-inline" } do |f| %>
       <%= f.number_field :meuble_id, :class => 'hidden' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :email, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :email, :class => 'text_field' %>
-    </div>
-  </div>
+      <%= f.label 'Please fill in your e-mail first :', :class => 'control-label'%>
+      <%= f.text_field :email, :class => 'text_field', :required => 'required', type: "email"  %>
 
-  <div class="form-actions">
-    <%= f.submit 'Let\'s buy it', :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                subscriptions_path, :class => 'btn' %>
-  </div>
+    <%= f.submit 'Let\'s buy it !', :class => 'btn btn-primary btn-large btn-success' %>
+
+
 <% end %>

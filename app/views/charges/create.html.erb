@@ -1,1 +1,7 @@
-<h2>Thanks, you paid <strong><%= number_to_currency @meuble.price %></strong>!</h2>
+<div class="alert alert-success">
+	<h2>Thanks, you just bought my <%= @meuble.name %> for <strong><%= number_to_currency @meuble.price %></strong>!</h2> We'll keep in touch. Mail me at e.schlum@gmail.com
+</div>
+
+<div class="progress progress-success progress-striped span4 offset3">
+  <div class="bar" style="width: 100%;"> 3 / 3</div>
+</div>	
